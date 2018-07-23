@@ -1,0 +1,41 @@
+<div class="btc">
+  <div class="container">
+
+    <a href="https://bitcoin.org/pl/" class="logo">
+      <img src="../../../assets/img/btc_logo.png" alt="">
+    </a>
+
+    <div class="price" *ngFor="let price of prices; let i of index">
+
+      <h2>{{ price[2] }}</h2>
+
+      <span class="date">
+        {{ price[0] | date: 'medium' }}
+      </span>
+
+      <span>
+        open: {{ price[1] }}
+      </span>
+
+      <span>
+        close: {{ price[2] }}
+      </span>
+
+      <span>
+        high: {{ price[3] }}
+      </span>
+
+      <span>
+        low: {{ price[4] }}
+      </span>
+
+      <!--ITERACJA PO KOLEI-->
+      <!--<div *ngFor="let p of price">-->
+        <!--{{p}}-->
+      <!--</div>-->
+      <hr>
+    </div>
+
+  </div>
+</div>
+

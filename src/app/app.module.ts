@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+import { HttpClientModule } from '@angular/common/http';
+import { TickerComponent } from './components/ticker/ticker.component';
+import { TickerService } from "./services/ticker.service";
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TickerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TickerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
