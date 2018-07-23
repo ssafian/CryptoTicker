@@ -27,6 +27,28 @@
       color: red;
     }
 
+    i.up{
+      border: solid green;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      position: relative;
+      top: -8px;
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+
+    i.down{
+      border: solid red;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      position: relative;
+      top: -6px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
     span{
       display: block;
     }
