@@ -7,7 +7,7 @@
 
     <div class="price" *ngFor="let price of prices; let i of index">
 
-      <h2 [ngClass]="{ 'colorGreen': savePrice < price[2], 'colorRed': savePrice > price[2] }">{{ price[2] }} USD <i [ngClass]="{ 'up': savePrice < price[2], 'down': savePrice > price[2] }"></i></h2>
+      <h2 [ngClass]="{ 'colorGreen': savePrice < price[2], 'colorRed': savePrice > price[2] }">{{ price[2] | number}} USD <i [ngClass]="{ 'up': savePrice < price[2], 'down': savePrice > price[2] }"></i></h2>
 
       <span class="date">
         {{ price[0] | date: 'medium' }}
