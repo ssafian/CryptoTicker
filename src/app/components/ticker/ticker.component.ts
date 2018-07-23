@@ -9,24 +9,30 @@ import {TickerService} from "../../services/ticker.service";
 export class TickerComponent implements OnInit {
 
   prices: any;
+  currentPrice: number;
+  savePrice: number;
 
   constructor(private tick: TickerService) { }
 
   ngOnInit() {
 
-   this.getBtc();
+   this.getPrices();
 
     setInterval(() => {
-      this.getBtc();
+      this.getPrices();
     }, 5000);
 
   }
 
-  getBtc(){
-    this.tick.getPrice().subscribe(posts => {
-      console.log(posts[0]);
-      this.prices = posts;
+  getPrices(){
+    this.tick.getPrice().subscribe(prices => {
+      this.currentPrice = prices[0][2];
+      console.log(prices[0]);
+      console.log('Current Price:' + this.currentPrice);
+      this.prices = prices;
     });
+
+    this.savePrice = this.currentPrice;
   }
 
 

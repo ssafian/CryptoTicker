@@ -17,7 +17,14 @@
   .price{
     h2{
       text-align: center;
+    }
 
+    h2.colorGreen{
+       color: green;
+    }
+
+    h2.colorRed{
+      color: red;
     }
 
     span{
