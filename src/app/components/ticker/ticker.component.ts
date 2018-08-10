@@ -18,22 +18,17 @@ export class TickerComponent implements OnInit {
 
    this.getPrices();
 
-    setInterval(() => {
-      this.getPrices();
-    }, 5000);
-
   }
 
   getPrices(){
+
+    this.savePrice = 0;
     this.tick.getPrice().subscribe(prices => {
       this.currentPrice = prices[0][2];
-      console.log(prices[0]);
-      console.log('Current Price:' + this.currentPrice);
       this.prices = prices;
+      this.savePrice = this.currentPrice;
     });
 
-    this.savePrice = this.currentPrice;
   }
-
 
 }
